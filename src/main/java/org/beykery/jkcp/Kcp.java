@@ -60,9 +60,9 @@ public class Kcp
     private int rmt_wnd;
     private int cwnd;
     private int probe;
-    private int current;
+    private long current;
     private int interval;
-    private int ts_flush;
+    private long ts_flush;
     private int xmit;
     private int nodelay;
     private int updated;
@@ -899,7 +899,7 @@ public class Kcp
      */
     public void update(long current)
     {
-        this.current = (int) current;
+        this.current = current;
         if (updated == 0)
         {
             updated = 1;
